@@ -162,13 +162,13 @@ def get_paging_detail(refid):
         good_code = newest_bill["inventory_item_code"]
         print(good_code)
         if good_code == "KIEM DINH":
-            return "Thu tieenf kieemr ddinhj HD " 
+            return "Thu tiền kiểm định HD " 
         if good_code == "HUAN LUYEN":
-            return "Thu tieenf huaans luyeenj HD "
+            return "Thu tiền huấn luyện HD "
         else:
-            return "Thu tieenf ddaof taoj HD "
+            return "Thu tiền đào tạo HD "
     else:
-        return "KO"
+        return ""
     
 print(get_paging_detail("02a922c7-1b02-4030-b68a-1f6ec1362665"))
 print(get_paging_detail("2a4ce4ad-ee84-4049-9d2f-12f6d0f74220"))
