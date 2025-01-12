@@ -3,7 +3,7 @@ import json
 import io
 
 # smeToken
-AUTH_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI5NGYyYmY0NS0yYjRhLTRlZjQtOWJiMS05ZjkyMDFkZTZjOTQiLCJ1bmEiOiJOR1VZRU5OR09DIiwiYXV0IjoiMCIsInVlbSI6InR1eWV0bmdvYzkxLmtyYkBnbWFpbC5jb20iLCJuYmYiOjE3MzY2NDE1MzAsImV4cCI6MTczNjcyNzkzMiwiaWF0IjoxNzM2NjQxNTMwLCJpc3MiOiJNSVNBSlNDIn0.g065p9W3py4hYJer3ORag_gKpGsP5HYQHnBCcjClRB4"
+AUTH_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIzZGRjMjY3Yy0yZWM5LTQzMzAtOWExYy02NDk0YmJjMGE2NTMiLCJ1bmEiOiJ0dXlldG5nb2NuZ3V5ZW45MS5vdUBnbWFpbC5jb20iLCJhdXQiOiIwIiwidWVtIjoidHV5ZXRuZ29jbmd1eWVuOTEub3VAZ21haWwuY29tIiwibmJmIjoxNzM2NjY4NjI4LCJleHAiOjE3MzY3NTUwNTUsImlhdCI6MTczNjY2ODYyOCwiaXNzIjoiTUlTQUpTQyJ9.O_ADSXsWs9m3QytamAlTTzVw9sepcGS19-JC6LGAfrI"
 my_headers = {
     "Accept": "application/json, text/plain, */*",
     "Accept-Encoding": "gzip, deflate, br, zstd",
@@ -20,7 +20,7 @@ my_headers = {
     "Sec-Fetch-Mode": "cors",
     "Sec-Fetch-Site": "same-origin",
     "X-Device": "2d0521caaf1af634bc3c9170f3186cd2",
-    "X-MISA-Context": '{"TenantId":"a933309c-b6b1-4148-ab04-916e297998e4","TenantCode":"DPRVDCS2","DatabaseId":"b06b55db-a9f5-44b0-975b-1109f4ea6404","BranchId":"21f30aff-b592-4fcd-8efd-652a57aee401","WorkingBook":0,"Language":"vi","IncludeDependentBranch":"False","SessionId":"ss94f2bf452b4a4ef49bb19f9201de6c94.2d0521caaf1af634bc3c9170f3186cd2.44ccc375765c447ea1a8176925051543.638721023098029132","DBType":1,"AuthType":0,"AmisSessionId":"YQA5ADMAMwAzADAAOQBjAGIANgBiADEANAAxADQAOABhAGIAMAA0ADkAMQA2AGUAMgA5ADcAOQA5ADgAZQA0AGIANwA2ADkAYgBiAGIAZQA1ADAAOAA0ADQAZQBmAGYAOQA3ADYAMAA0ADIAMwA0ADkAMABmADcAMwBlAGIANQA=","HasAgent":False,"UserType":1,"art":0,"UserId":"94f2bf45-2b4a-4ef4-9bb1-9f9201de6c94","isc":False}',
+    "X-MISA-Context": "{\"TenantId\":\"a933309c-b6b1-4148-ab04-916e297998e4\",\"TenantCode\":\"DPRVDCS2\",\"DatabaseId\":\"44ccc375-765c-447e-a1a8-176925051543\",\"BranchId\":\"c9707f99-d9c5-49d7-9be0-8f6a8061c479\",\"WorkingBook\":0,\"Language\":\"vi\",\"IncludeDependentBranch\":\"false\",\"SessionId\":\"ss1b585558e49f49a2bc9616c8a74b7475.93cb8228535738a13fa88ff719acf469.b06b55dba9f544b0975b1109f4ea6404.638711095725021734\",\"DBType\":1,\"AuthType\":0,\"AmisSessionId\":\"YQA5ADMAMwAzADAAOQBjAGIANgBiADEANAAxADQAOABhAGIAMAA0ADkAMQA2AGUAMgA5ADcAOQA5ADgAZQA0ADkANwA1AGMAOABhADQAMQBiAGIAYwAwADQAMQAzAGUAOAA0ADEAOAA4ADcAOQA0ADQAMgAxADAAOQA5AGQANAA=\",\"HasAgent\":false,\"UserType\":1,\"art\":2,\"UserId\":\"1b585558-e49f-49a2-bc96-16c8a74b7475\",\"isc\":false}",
     "sec-ch-ua": '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
     "sec-ch-ua-mobile": "?0",
     "sec-ch-ua-platform": '"Windows"'
@@ -74,97 +74,90 @@ def get_bill_info(bill_id):
         return tax_code, total_amount_on_bill
     else:
         return ""
-headers = {
-    "Accept": "application/json, text/plain, */*",
-    "Accept-Encoding": "gzip, deflate, br, zstd",
-    "Accept-Language": "en-US,en;q=0.9,vi;q=0.8",
-    "Authorization": f"Bearer {AUTH_TOKEN}",
-    "Connection": "keep-alive",
-    "Content-Length": "387",
-    "Content-Type": "application/json",
-    "Cookie": "env=g1; dbid=b06b55db-a9f5-44b0-975b-1109f4ea6404; env_b06b55db_a9f5_44b0_975b_1109f4ea6404_1_12_2025=g1; _ga_4N8J1W6EBF=GS1.1.1736641511.15.0.1736641511.0.0.0; _gid=GA1.2.1513097689.1736641511; _ga=GA1.1.1300888454.1734964560; mp_844407e91b119d6a00359efeff26eaa4_mixpanel=%7B%22distinct_id%22%3A%20%22%24device%3A193f3f273596645-05d82df40412cc-4c657b58-100200-193f3f273596646%22%2C%22%24device_id%22%3A%20%22193f3f273596645-05d82df40412cc-4c657b58-100200-193f3f273596646%22%2C%22%24initial_referrer%22%3A%20%22https%3A%2F%2Factapp.misa.vn%2F%22%2C%22%24initial_referring_domain%22%3A%20%22actapp.misa.vn%22%2C%22__mps%22%3A%20%7B%7D%2C%22__mpso%22%3A%20%7B%22%24initial_referrer%22%3A%20%22https%3A%2F%2Factapp.misa.vn%2F%22%2C%22%24initial_referring_domain%22%3A%20%22actapp.misa.vn%22%7D%2C%22__mpus%22%3A%20%7B%7D%2C%22__mpa%22%3A%20%7B%7D%2C%22__mpu%22%3A%20%7B%7D%2C%22__mpr%22%3A%20%5B%5D%2C%22__mpap%22%3A%20%5B%5D%7D; TS01a7d1ca=019ba1692d5fdb8624c0314bfdbbc493b2f0fdfa0660e6c65896c8ffb333d4dc79802f9ea8f876de4af0e97e2fe89c0861c3712a7f; _ga_2B9RDZ4E89=GS1.1.1736650750.23.1.1736650874.0.0.0",
-    "Host": "actapp.misa.vn",
-    "Origin": "https://actapp.misa.vn",
-    "Referer": "https://actapp.misa.vn/app/SA/SAVoucher",
-    "Sec-Fetch-Dest": "empty",
-    "Sec-Fetch-Mode": "cors",
-    "Sec-Fetch-Site": "same-origin",
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0",
-    "X-Device": "5535b7b93e5e3323a8273b7f0f46a7f1",
-    "X-MISA-Context": json.dumps({
-        "TenantId": "a933309c-b6b1-4148-ab04-916e297998e4",
-        "TenantCode": "DPRVDCS2",
-        "DatabaseId": "b06b55db-a9f5-44b0-975b-1109f4ea6404",
-        "BranchId": "21f30aff-b592-4fcd-8efd-652a57aee401",
-        "WorkingBook": 0,
-        "Language": "vi",
-        "IncludeDependentBranch": "False",
-        "SessionId": "ss94f2bf452b4a4ef49bb19f9201de6c94.5535b7b93e5e3323a8273b7f0f46a7f1.b06b55dba9f544b0975b1109f4ea6404.638722635305500969",
-        "DBType": 1,
-        "AuthType": 0,
-        "AmisSessionId": "YQA5ADMAMwAzADAAOQBjAGIANgBiADEANAAxADQAOABhAGIAMAA0ADkAMQA2AGUAMgA5ADcAOQA5ADgAZQA0ADEANQAzADYAZgA4ADkAMAA2ADIAMgBkADQAYQA4ADEAYgBmAGMAMAAwADIAOQAyADIAYgAxAGQAZgA4AGYAZgA=",
-        "HasAgent": False,
-        "UserType": 1,
-        "art": 0,
-        "UserId": "94f2bf45-2b4a-4ef4-9bb1-9f9201de6c94",
-        "isc": False
-    }),  
-}
-def get_paging_detail(refid):
-    response = requests.post(
-        url= "https://actapp.misa.vn/g1/api/sa/v1/sa_voucher_get/get_paging_detail",
-        headers=headers,
-        json= {"columns": [
-                    2157,
-                    1355,
-                    1195,
-                    1065,
-                    5274,
-                    3870,
-                    5279,
-                    308,
-                    5364,
-                    5350,
-                    5347,
-                    2818,
-                    1684,
-                    3404,
-                    5476,
-                    2358
-                ],
-                "sort": [
-                    {
-                    "property": 4555,
-                    "desc": False,
-                    "data_type": 4,
-                    "operand": 1
-                    }
-                ],
-                "filter": [
-                    {
-                    "property": 3993,
-                    "operator": 7,
-                    "operand": 1,
-                    "value": refid,
-                    "data_type": 10
-                    }
-                ],
-                "pageIndex": 1,
-                "pageSize": 20,
-                "useSp": False,
-                "view": 96,
-                "summaryColumns": [
-                    3488,
-                    3870,
-                    308,
-                    5350
-                ],
-                "loadMode": 2
-                }
 
-    ).json()
+def get_paging_detail(refid):
+
+    cookies = {
+        'cf_clearance': 'wd2f8L.7ie3w2qUzu6rjMwj.8ytKtkxeMqq1mAp0mVw-1735491457-1.2.1.1-KHH9DiP1flNz32OvxN8uWgX.r.dMx9OkRUeEezQmK1exnYDb5ahlPs05TMeTTxhh3jj3OD59tPFjZdNNMD5M54kqBfexGu8swd6Z9rR0aYqyHCi459hWP_Xg0GB4kb19Ufh027vg1WnQeTGPFwvn57nJp2Um8APL8wT6IRk.ZmPnBzbt8UKixpfG.QmDOJN4dGx8Zjs9YpBzil7XU_oHSHUB5WG2YHQRA0X3f_.V3zhyTNoUqqoiOKmu3jOHEjKMwisGvg4ISt0SdC8Z_Px5j2chKP2.rqOPZvKLbBYWFSFR4zuWEi3uTv6RVdL9eg_lnEqSGSleE04Kwk6X1M8U0gpEEUyFe6r0tD1H8ENd7k5E9.F35DxrOb7xOtvas0lz9zNrp2akB1x_5VRRsq.CBg',
+        'TS01a7d1ca': '019ba1692d27e1cb38348ecaff8fd70ed64617eea2846bda75cf1ad7b7d7c2a72928e2c242695684bf3e90187785eed1a106341ffc',
+        'env': 'g1',
+        'env_44ccc375_765c_447e_a1a8_176925051543_1_12_2025': 'g1',
+        'dbid': 'b06b55db-a9f5-44b0-975b-1109f4ea6404',
+        'env_b06b55db_a9f5_44b0_975b_1109f4ea6404_1_12_2025': 'g1',
+    }
+
+    headers = {
+        'Accept': 'application/json, text/plain, */*',
+        'Accept-Language': 'en-US,en;q=0.9,vi;q=0.8',
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIzZGRjMjY3Yy0yZWM5LTQzMzAtOWExYy02NDk0YmJjMGE2NTMiLCJ1bmEiOiJ0dXlldG5nb2NuZ3V5ZW45MS5vdUBnbWFpbC5jb20iLCJhdXQiOiIwIiwidWVtIjoidHV5ZXRuZ29jbmd1eWVuOTEub3VAZ21haWwuY29tIiwibmJmIjoxNzM2NjY4NjI4LCJleHAiOjE3MzY3NTUwNTUsImlhdCI6MTczNjY2ODYyOCwiaXNzIjoiTUlTQUpTQyJ9.O_ADSXsWs9m3QytamAlTTzVw9sepcGS19-JC6LGAfrI',
+        'Connection': 'keep-alive',
+        'Content-Type': 'application/json',
+        # 'Cookie': 'cf_clearance=wd2f8L.7ie3w2qUzu6rjMwj.8ytKtkxeMqq1mAp0mVw-1735491457-1.2.1.1-KHH9DiP1flNz32OvxN8uWgX.r.dMx9OkRUeEezQmK1exnYDb5ahlPs05TMeTTxhh3jj3OD59tPFjZdNNMD5M54kqBfexGu8swd6Z9rR0aYqyHCi459hWP_Xg0GB4kb19Ufh027vg1WnQeTGPFwvn57nJp2Um8APL8wT6IRk.ZmPnBzbt8UKixpfG.QmDOJN4dGx8Zjs9YpBzil7XU_oHSHUB5WG2YHQRA0X3f_.V3zhyTNoUqqoiOKmu3jOHEjKMwisGvg4ISt0SdC8Z_Px5j2chKP2.rqOPZvKLbBYWFSFR4zuWEi3uTv6RVdL9eg_lnEqSGSleE04Kwk6X1M8U0gpEEUyFe6r0tD1H8ENd7k5E9.F35DxrOb7xOtvas0lz9zNrp2akB1x_5VRRsq.CBg; TS01a7d1ca=019ba1692d27e1cb38348ecaff8fd70ed64617eea2846bda75cf1ad7b7d7c2a72928e2c242695684bf3e90187785eed1a106341ffc; env=g1; env_44ccc375_765c_447e_a1a8_176925051543_1_12_2025=g1; dbid=b06b55db-a9f5-44b0-975b-1109f4ea6404; env_b06b55db_a9f5_44b0_975b_1109f4ea6404_1_12_2025=g1',
+        'Origin': 'https://actapp.misa.vn',
+        'Referer': 'https://actapp.misa.vn/app/SA/SAVoucher',
+        'Sec-Fetch-Dest': 'empty',
+        'Sec-Fetch-Mode': 'cors',
+        'Sec-Fetch-Site': 'same-origin',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0',
+        'X-Device': '93cb8228535738a13fa88ff719acf469',
+        'X-MISA-Context': '{"TenantId":"a933309c-b6b1-4148-ab04-916e297998e4","TenantCode":"DPRVDCS2","DatabaseId":"b06b55db-a9f5-44b0-975b-1109f4ea6404","BranchId":"21f30aff-b592-4fcd-8efd-652a57aee401","WorkingBook":0,"Language":"vi","IncludeDependentBranch":"false","SessionId":"ss3ddc267c2ec943309a1c6494bbc0a653.93cb8228535738a13fa88ff719acf469.44ccc375765c447ea1a8176925051543.638722906280862638","DBType":1,"AuthType":0,"AmisSessionId":"YQA5ADMAMwAzADAAOQBjAGIANgBiADEANAAxADQAOABhAGIAMAA0ADkAMQA2AGUAMgA5ADcAOQA5ADgAZQA0AGMANABjAGQAZQA2ADcAYQBmADQAYwAzADQAOQA0ADkAOAA3AGYAZABiAGIAOAAwADkAMwA3ADgANwA3ADkAZAA=","HasAgent":false,"UserType":1,"art":0,"UserId":"3ddc267c-2ec9-4330-9a1c-6494bbc0a653","isc":false}',
+        'sec-ch-ua': '"Microsoft Edge";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+    }
+
+    json_data = {
+        'columns': [
+            2157,
+            1355,
+            1195,
+            1065,
+            5274,
+            3870,
+            5279,
+            308,
+            5364,
+            5350,
+            5347,
+            2818,
+            1684,
+            3404,
+            5476,
+            2358,
+        ],
+        'sort': '[{"property":4555,"desc":false,"data_type":4,"operand":1}]',
+        'filter': [
+            {
+                'property': 3993,
+                'operator': 7,
+                'operand': 1,
+                'value': refid,
+                'data_type': 10,
+            },
+        ],
+        'pageIndex': 1,
+        'pageSize': 20,
+        'useSp': False,
+        'view': 96,
+        'summaryColumns': [
+            3488,
+            3870,
+            308,
+            5350,
+        ],
+        'loadMode': 2,
+    }
+
+    r = requests.post(
+        'https://actapp.misa.vn/g1/api/sa/v1/sa_voucher_get/get_paging_detail',
+        cookies=cookies,
+        headers=headers,
+        json=json_data,
+    )
+    response = json.load(io.BytesIO(r.content))
     print(response)
     if "Data" in response and "PageData" in response["Data"] and len(response["Data"]["PageData"]) > 0:
+        print(len(response["Data"]["PageData"]))
         newest_bill = response["Data"]["PageData"][0]
         good_code = newest_bill["inventory_item_code"]
         print(good_code)
@@ -176,4 +169,8 @@ def get_paging_detail(refid):
             return "Thu tieenf ddaof taoj HD "
     else:
         return "KO"
-print(get_paging_detail("2d351f0c-aa09-4824-8538-424e7c2a48e6"))
+    
+print(get_paging_detail("02a922c7-1b02-4030-b68a-1f6ec1362665"))
+print(get_paging_detail("2a4ce4ad-ee84-4049-9d2f-12f6d0f74220"))
+
+# print(get_bill_info("0000234"))
