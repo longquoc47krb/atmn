@@ -109,7 +109,7 @@ def get_bill_info(bill_id):
         return ""
 
 def get_paging_detail(refid):
-
+    global AUTH_TOKEN
     cookies = {
         'cf_clearance': 'wd2f8L.7ie3w2qUzu6rjMwj.8ytKtkxeMqq1mAp0mVw-1735491457-1.2.1.1-KHH9DiP1flNz32OvxN8uWgX.r.dMx9OkRUeEezQmK1exnYDb5ahlPs05TMeTTxhh3jj3OD59tPFjZdNNMD5M54kqBfexGu8swd6Z9rR0aYqyHCi459hWP_Xg0GB4kb19Ufh027vg1WnQeTGPFwvn57nJp2Um8APL8wT6IRk.ZmPnBzbt8UKixpfG.QmDOJN4dGx8Zjs9YpBzil7XU_oHSHUB5WG2YHQRA0X3f_.V3zhyTNoUqqoiOKmu3jOHEjKMwisGvg4ISt0SdC8Z_Px5j2chKP2.rqOPZvKLbBYWFSFR4zuWEi3uTv6RVdL9eg_lnEqSGSleE04Kwk6X1M8U0gpEEUyFe6r0tD1H8ENd7k5E9.F35DxrOb7xOtvas0lz9zNrp2akB1x_5VRRsq.CBg',
         'TS01a7d1ca': '019ba1692d27e1cb38348ecaff8fd70ed64617eea2846bda75cf1ad7b7d7c2a72928e2c242695684bf3e90187785eed1a106341ffc',
