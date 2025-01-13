@@ -101,7 +101,8 @@ def get_bill_info(bill_id):
         newest_bill = response["Data"]["PageData"][0]
         tax_code = newest_bill["account_object_tax_code"]
         total_amount_on_bill = newest_bill["total_amount"]
-        return tax_code, total_amount_on_bill
+        ref_id = newest_bill["refid"]
+        return tax_code, total_amount_on_bill, ref_id
     else:
         return ""
 
@@ -201,6 +202,7 @@ def get_paging_detail(refid):
         return ""
     
 # print(get_paging_detail("02a922c7-1b02-4030-b68a-1f6ec1362665"))
-print(get_paging_detail("2a4ce4ad-ee84-4049-9d2f-12f6d0f74220"))
+# print(get_paging_detail("2a4ce4ad-ee84-4049-9d2f-12f6d0f74220"))
 
 print(get_bill_info("001697"))
+print(get_paging_detail(get_bill_info("001697")[-1]))
