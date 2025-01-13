@@ -1,8 +1,10 @@
 import requests
 import json
 import io
-
-AUTH_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIzZGRjMjY3Yy0yZWM5LTQzMzAtOWExYy02NDk0YmJjMGE2NTMiLCJ1bmEiOiJ0dXlldG5nb2NuZ3V5ZW45MS5vdUBnbWFpbC5jb20iLCJhdXQiOiIwIiwidWVtIjoidHV5ZXRuZ29jbmd1eWVuOTEub3VAZ21haWwuY29tIiwibmJmIjoxNzM2NzcxMjcyLCJleHAiOjE3MzY4NTc2ODMsImlhdCI6MTczNjc3MTI3MiwiaXNzIjoiTUlTQUpTQyJ9.tGFQAKQp32uRqR1a45G4HqLdKpYVJEucJzGfD3G1T80"
+import os
+from dotenv import load_dotenv
+load_dotenv()
+AUTH_TOKEN = os.getenv('ATMN_TOKEN')
 
 def get_bill_info(bill_id):
     cookies = {

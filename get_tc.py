@@ -1,9 +1,12 @@
 import requests
 import json
 import io
+import os
+from dotenv import load_dotenv
+load_dotenv()
+AUTH_TOKEN = os.getenv('ATMN_TOKEN')
 
 # smeToken
-AUTH_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI5NGYyYmY0NS0yYjRhLTRlZjQtOWJiMS05ZjkyMDFkZTZjOTQiLCJ1bmEiOiJOR1VZRU5OR09DIiwiYXV0IjoiMCIsInVlbSI6InR1eWV0bmdvYzkxLmtyYkBnbWFpbC5jb20iLCJuYmYiOjE3MzYyMjIwOTEsImV4cCI6MTczNjMwODUxNywiaWF0IjoxNzM2MjIyMDkxLCJpc3MiOiJNSVNBSlNDIn0.XUpdf42UsV7bJSYneMBt6d6TVcNHRE8dtX5eg31JCas"
 my_headers = {
     "Accept" : "application/json, text/plain, */*",
     "Accept-Encoding" : "gzip, deflate, br, zstd",
