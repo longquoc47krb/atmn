@@ -198,6 +198,8 @@ def get_paging_detail(refid):
             return "Thu tiền kiểm định HD " 
         if good_code == "HUAN LUYEN":
             return "Thu tiền huấn luyện HD "
+        if good_code == "HIEUCHUAN":
+            return "Thu tiền hiệu chuẩn HD "
         else:
             return "Thu tiền đào tạo HD "
     else:
@@ -205,6 +207,3 @@ def get_paging_detail(refid):
     
 # print(get_paging_detail("02a922c7-1b02-4030-b68a-1f6ec1362665"))
 # print(get_paging_detail("2a4ce4ad-ee84-4049-9d2f-12f6d0f74220"))
-
-print(get_bill_info("001697"))
-print(get_paging_detail(get_bill_info("001697")[-1]))
